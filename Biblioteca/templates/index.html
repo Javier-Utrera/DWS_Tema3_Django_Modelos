@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi blog</title>
+</head>
+<body>
+    <!--Temlate tags-->
+    <li><a href="{% url 'url_listar_libros' %}">Libros</a></li>
+    <li><a href="{% url 'url_dame_libro' id_libro=1 %}">Un libro</a></li>
+    <li><a href="{% url 'url_dame_fecha' anio_libro=2010 mes_libro=10 %}">Libros con un filtro 2010 10</a></li>
+</body>
+</html>

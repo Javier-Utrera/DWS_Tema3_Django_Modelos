@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi blog</title>
+</head>
+<body>
+    <!--Temlate tags-->
+    <p>Esto es libros.html</p>
+    {% for libro in view_libros_mostrar %}
+        <div>
+            <h2>ID: {{ libro.id }}</h2>
+            <h2>Nombre: {{ libro.nombre }}</h2>
+            <h2>Biblioteca: {{ libro.biblioteca.direccion }}</h2>
+            <h2>Autores</h2>
+            <ul>
+                {% for autor in libro.autores.all %}
+                    <li>{{ autor.nombre }}</li> 
+                {% endfor %}   
+            </ul>
+            <p>Fecha Publicacion {{ libro.fecha_publicacion }}</p>
+            <h3>Idioma: {{ libro.get_idioma_display }}</h3>
+            <p>Descripcion: {{ libro.descripcion }}</p>
+        </div>
+        <a href="{% url 'url_dame_libro' libro.id %}">Mas detalles</a>       
+    {% endfor %} 
+</body>
+</html>
